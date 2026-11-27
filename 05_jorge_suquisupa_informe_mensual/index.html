@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Edición mensual · Jorge Suquisupa</title>
+  <meta name="description" content="Editor de informes mensuales para cargar tablas y gráficos, reutilizar una plantilla y exportar el documento.">
+  <meta name="theme-color" content="#f4f6fa">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/edition-studio-home.css">
+  <script src="assets/app.js" defer></script>
+  <script src="assets/core.js" defer></script>
+  <script src="assets/ejemplo-mensual.js" defer></script>
+</head>
+<body class="edition-studio" data-site="05" data-page="index">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="studio-header-inner">
+      <a class="studio-brand" href="index.html" aria-label="Edición mensual, inicio">
+        <span class="studio-mark" aria-hidden="true">E</span>
+        <span>Edición mensual</span>
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menú</button>
+      <nav id="site-nav" aria-label="Navegación principal">
+        <a href="index.html" aria-current="page">Inicio</a>
+        <a href="enfoque.html">Método</a>
+        <a href="contacto.html">Contacto</a>
+        <a class="studio-nav-editor" href="herramientas.html">Abrir editor <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="studio-hero" aria-labelledby="studio-title">
+      <div class="studio-wrap studio-hero-grid">
+        <div class="studio-copy">
+          <p class="studio-author">Informes de Jorge Suquisupa</p>
+          <h1 id="studio-title">Genera tu <span>informe mensual.</span></h1>
+          <p class="studio-lead">Carga los datos del mes y conserva la plantilla. Revisa cómo quedan tus tablas, gráficos y notas antes de emitir el informe.</p>
+          <div class="studio-actions">
+            <a class="studio-button" href="herramientas.html#editor-periodo">Crear informe <span aria-hidden="true">↗</span></a>
+            <a class="studio-text" href="#flujo-mensual">Ver cómo funciona <span aria-hidden="true">↓</span></a>
+          </div>
+          <dl class="studio-sources">
+            <div><dt>Tus datos</dt><dd>Tablas CSV y gráficos en PNG o JPEG</dd></div>
+            <div><dt>Tu informe</dt><dd>HTML descargable y PDF desde Imprimir</dd></div>
+          </dl>
+        </div>
+
+        <section class="document-stage" aria-labelledby="stage-title">
+          <div class="stage-toolbar">
+            <div>
+              <h2 id="stage-title">Vista previa del informe</h2>
+              <p>Ejemplo con datos ficticios</p>
+            </div>
+            <div class="month-switch" role="group" aria-label="Periodo del ejemplo" hidden>
+              <button type="button" data-demo-period="2026-10" aria-pressed="false">Octubre</button>
+              <button type="button" data-demo-period="2026-11" aria-pressed="true">Noviembre</button>
+            </div>
+          </div>
+          <article class="report-paper" aria-labelledby="paper-title">
+            <div class="paper-header">
+              <p id="demo-period">Noviembre de 2026</p>
+              <h3 id="paper-title">Informe de actividad</h3>
+            </div>
+            <div class="paper-total">
+              <div><strong id="demo-total">180</strong><span> unidades</span></div>
+              <p>Unidades registradas</p>
+            </div>
+            <div class="paper-insights">
+              <section aria-labelledby="demo-chart">
+                <h4 id="demo-chart">Distribución por categoría</h4>
+                <div class="paper-meter-grid">
+                  <div class="paper-column"><label for="demo-bar-a">A</label><meter id="demo-bar-a" min="0" max="100" value="72">72</meter></div>
+                  <div class="paper-column"><label for="demo-bar-b">B</label><meter id="demo-bar-b" min="0" max="100" value="58">58</meter></div>
+                  <div class="paper-column"><label for="demo-bar-c">C</label><meter id="demo-bar-c" min="0" max="100" value="50">50</meter></div>
+                </div>
+              </section>
+              <table class="paper-table">
+                <caption>Detalle del periodo</caption>
+                <thead><tr><th scope="col">Categoría</th><th scope="col">Unidades</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">A</th><td id="demo-value-a">72</td></tr>
+                  <tr><th scope="row">B</th><td id="demo-value-b">58</td></tr>
+                  <tr><th scope="row">C</th><td id="demo-value-c">50</td></tr>
+                </tbody>
+                <tfoot><tr><th scope="row">Total</th><td id="demo-table-total">180</td></tr></tfoot>
+              </table>
+            </div>
+          </article>
+          <div class="stage-footer">
+            <button id="demo-export" class="studio-download" type="button" hidden>Descargar ejemplo HTML <span aria-hidden="true">↓</span></button>
+          </div>
+          <p id="demo-status" class="sr-only" role="status"></p>
+        </section>
+      </div>
+    </section>
+
+    <section id="flujo-mensual" class="studio-flow studio-wrap" aria-labelledby="flow-title">
+      <div class="studio-section-heading">
+        <h2 id="flow-title">Del dato al informe</h2>
+        <p>Elige una etapa para abrirla directamente en el editor.</p>
+      </div>
+      <div class="studio-workflow">
+        <article>
+          <h3>Importar datos</h3>
+          <p>Asigna fecha, categoría y valor de un CSV. El editor calcula los totales y arma la tabla y el gráfico.</p>
+          <a href="herramientas.html#editor-datos">Cargar tabla CSV <span aria-hidden="true">↗</span></a>
+        </article>
+        <article>
+          <h3>Incorporar gráficos</h3>
+          <p>Si ya tienes una tabla o un gráfico, incorpora la imagen como una figura del mes con título y pie.</p>
+          <a href="herramientas.html#editor-imagenes">Añadir figuras <span aria-hidden="true">↗</span></a>
+        </article>
+        <article>
+          <h3>Guardar la plantilla</h3>
+          <p>Define títulos, secciones e indicador. Mantén ese formato y cambia las notas y los datos de cada periodo.</p>
+          <a href="herramientas.html#editor-plantilla">Editar plantilla <span aria-hidden="true">↗</span></a>
+        </article>
+        <article>
+          <h3>Emitir el documento</h3>
+          <p>Revisa el informe y descárgalo como HTML. Usa Imprimir para obtener una copia PDF.</p>
+          <a href="herramientas.html#editor-documento">Ver y exportar <span aria-hidden="true">↗</span></a>
+        </article>
+      </div>
+    </section>
+
+    <section class="studio-wrap studio-template" aria-labelledby="template-title">
+      <div>
+        <h2 id="template-title">Adaptación al formato de Jorge</h2>
+        <p>Para trasladar la estructura exacta de sus informes, hace falta un informe aprobado, la tabla que lo alimenta y las reglas de sus indicadores.</p>
+      </div>
+      <a class="studio-text" href="enfoque.html#alcance">Ver los archivos necesarios <span aria-hidden="true">↗</span></a>
+    </section>
+  </main>
+
+  <footer class="studio-footer">
+    <div class="studio-wrap"><span>Edición mensual · Jorge Suquisupa</span><a href="contacto.html">Contacto</a></div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,54 @@
+EDICIÓN MENSUAL
+Jorge Fabián Suquisupa Calle · Ecuador
+Entrega local personalizada · 25 de noviembre de 2026
+
+PRIMER INFORME
+1. Extrae el ZIP completo y conserva assets junto a los HTML.
+2. Abre index.html y entra a Crear informe (herramientas.html).
+3. Carga un CSV, asigna fecha/mes, categoría y valor, y valida la vista previa.
+4. Confirma la importación. El primer conjunto elige el último mes registrado; puedes cambiarlo.
+5. Abre La plantilla y completa título, organización, indicador, unidad y autor. Elige secciones y guarda.
+6. Escribe notas y conclusiones del mes. Se conservan de forma independiente por periodo.
+7. Si ya tienes gráficos o tablas en imagen, incorpora PNG/JPEG con título y pie. Revisa y confirma cada figura.
+8. Actualiza la vista y contrasta la suma con tu fuente.
+9. Descarga HTML, imprime o guarda como PDF desde el diálogo del navegador.
+10. Descarga un respaldo JSON antes de cerrar o trasladar el trabajo.
+
+QUÉ FUNCIONA
+CSV configurable, captura/edición de registros, filtro mensual, sumas por categoría, gráficos SVG exactos, comparación condicionada a tu confirmación, plantilla reusable, notas por mes, anexos de imágenes, HTML autónomo y respaldos.
+No hay datos de demostración cargados. La plantilla inicial es una propuesta editable, no una réplica de un informe original que no fue proporcionado.
+
+CÓMO DEBEN SER LOS DATOS
+Un conjunto representa un solo indicador y una misma unidad. Cada fila debe poder sumarse. No combines porcentajes con cantidades, ni una fila de total con su detalle diario. Usa fecha AAAA-MM-DD o mes AAAA-MM; números con punto decimal y hasta cuatro decimales. Revisa GUIA_DATOS_Y_REGLAS.md.
+plantillas/datos_mensuales.csv contiene solo encabezados. Si tus columnas tienen otros nombres, asígnalas en el editor.
+Los meses sin registros no se consideran cero. Solo se calcula variación cuando confirmas igual cobertura, unidad y criterio; para porcentaje además se requiere base anterior positiva.
+
+IMÁGENES
+PNG/JPEG hasta 1,5 MB cada una; máximo 6 imágenes y 4 MB codificados en total. Las figuras se guardan con el mes seleccionado y se incrustan en el HTML. No hay OCR ni interpretación automática. Si falla la lectura, el estado anterior se conserva.
+
+PLANTILLA, NOTAS Y GUARDADO
+La plantilla es compartida por todos los meses; las notas y las imágenes pertenecen a cada periodo. El respaldo JSON incluye todo. Descargar plantilla JSON permite conservar solo la estructura.
+Los datos se guardan en este navegador cuando permite localStorage. Al abrir archivos directamente, el guardado puede variar. Si se bloquea o se llena, el editor mantiene el trabajo en memoria y lo avisa: descarga un respaldo antes de cerrar.
+Guarda o cancela los formularios editados antes de exportar. El documento usa el estado guardado y se actualiza cuando pulsas el botón.
+
+LÍMITES Y SIGUIENTE FASE
+No se recibió tu informe original ni tus datos reales. No hay IA conectada, OCR, lectura nativa de Excel, envío automático ni conexión con tu organización. Para replicar exactamente la estructura, reúne un informe aprobado, sus tablas de origen, la lista de indicadores/unidades, reglas de corte y quién lo revisa. La carga y generación actual se realizan manualmente; no existe una ejecución mensual programada.
+El correo de contacto abre tu aplicación; tú revisas y envías.
+
+PUBLICACIÓN FUTURA
+La carpeta está preparada para un sitio estático en Netlify: index.html, 404.html, netlify.toml y _headers. No requiere npm ni compilación. El directorio de publicación es esta carpeta. No se publicó ningún sitio.
+
+VERIFICACIÓN
+Código y flujos comprobados en Node VM con DOM instrumentado del HTML real. No hubo navegador, captura ni inspección visual en navegador debido a la restricción de la sesión. QA_RESULTADOS.md documenta alcance y límites. Con Node instalado: node pruebas/verificar.cjs
+
+REVISIÓN DEL 26 DE NOVIEMBRE DE 2026
+Los registros nuevos, la plantilla, las notas y las imágenes pendientes pueden descartarse sin afectar los datos guardados. Cambiar los campos de una imagen preparada invalida su confirmación anterior: hay que prepararla de nuevo. La vista indica si sigue vigente. Los respaldos conservan el mismo formato versión 1.
+Se ajustaron tamaños de controles y metadatos y se reforzó el ajuste por CSS en anchos estrechos. 16 grupos de pruebas aprobados. No se realizó una inspección visual en navegador.
+
+LÍMITE DEL RESPALDO
+Cada cambio debe conservar un respaldo JSON de hasta 10 MB. Si se supera, no se guarda el cambio y se conserva el estado anterior. Descarga tu respaldo antes de dividir un trabajo extenso.
+
+INTERFAZ ACTUALIZADA · 26 NOVIEMBRE 2026
+El estudio conserva las fuentes y la plantilla en el panel de edición, y el documento en una superficie de lectura independiente. Los pasos superiores abren directamente Fuentes, Plantilla, Notas o la vista del informe. Los paneles se pueden desplegar por separado.
+Los gráficos generados y la tabla se incorporan al HTML descargado, junto con el estilo editorial y las imágenes aportadas. En una pantalla estrecha, un gráfico conserva el espacio necesario para sus etiquetas y puede deslizarse horizontalmente. La impresión mantiene ajustes A4; el PDF se guarda desde el diálogo del navegador.
+La composición de portada es conceptual; las cifras del documento siempre proceden de los datos que cargues. Animaciones respetuosas del movimiento reducido y avisos que puedes cerrar.

@@ -1,0 +1,24 @@
+RECURSOS Y LICENCIAS
+
+Código, textos, composición visual y recursos SVG/CSS creados específicamente para esta entrega formativa del Centro IBEROamericano.
+No se han utilizado fotografías de obras, oficinas, clientes ni resultados de negocio. Las composiciones de portada son conceptuales; los gráficos del informe se generan desde los datos introducidos por el usuario.
+
+Fuentes locales en assets/fonts/: Noto Sans Display y Noto Sans (SIL Open Font License 1.1); DejaVu Sans Mono (licencia Bitstream Vera; modificaciones DejaVu de dominio público). Los nombres internos de los subconjuntos son Site Display, Site Text y Site Mono. Las licencias y atribuciones completas se conservan en assets/fonts/LICENSES.txt.
+Las fuentes de respaldo Georgia y Arial son fuentes del sistema del visitante y no se redistribuyen.
+No hay CDN, bibliotecas remotas, fotografías de stock ni servicios externos necesarios para ejecutar el sitio.
+
+Fuentes técnicas consultadas el 25 de noviembre de 2026
+
+- MDN, Window.localStorage: https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+  El almacenamiento pertenece al origen y puede fallar. En archivos file: su comportamiento depende del navegador. Por eso cada herramienta avisa y permite respaldar.
+- MDN, BigInt: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt
+  Se emplean enteros de precisión arbitraria para el cálculo. El respaldo conserva las entradas como texto decimal y no serializa BigInt directamente.
+- MDN, serialización de BigInt: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/BigInt_not_serializable
+  Contexto técnico del diseño de respaldos JSON.
+- Netlify, configuración por archivo: https://docs.netlify.com/build/configure-builds/file-based-configuration/
+  Se incluye netlify.toml con publicación del directorio actual. Esta entrega no registra ni publica ningún sitio.
+
+REDISEÑO · 26 NOVIEMBRE 2026
+Portada, componentes visuales y navegación propios de este producto. Iconos SVG nativos y composiciones de interfaz originales. assets/premium.css y assets/experience.js amplían la presentación sin añadir bibliotecas externas. No se usan marcas, testimonios, datos o clientes ficticios.
+
+assets/estudio-editorial.webp: imagen conceptual generada con OpenAI ImageGen para la portada. Las composiciones impresas son ilustrativas.

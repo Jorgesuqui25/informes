@@ -1,0 +1,121 @@
+{
+  "date": "2026-11-26",
+  "original_answer": {
+    "fecha": "24/11/2026, 7:10:56 p.m.",
+    "entrega": "Revisar envío de correo · respuesta guardadaActualizar estado",
+    "nombre": "JORGE FABIAN SUQUISUPA CALLE",
+    "email": "jorge.suquisupa@hotmail.com",
+    "pais": "Ecuador",
+    "proyectos": "Automatizar informes mensuales los cuales contienen graficos y tablas pero estos graficos siempre son los mismos solo que actualizados con la información de cada mes",
+    "objetivos": "Cargar los graficos y tablas y que me emita el informe",
+    "estado_web": "no_tengo",
+    "web_deseos": "—",
+    "automatizacion": "el cargar las tablas y graficos o que me de haciendo los graficos y tablas y luego emitir el informe que tiene el mismo formato mes a mes",
+    "experiencia_ia": "principiante",
+    "crm": "Enviar al CRM"
+  },
+  "audit": {
+    "folder": "05_jorge_suquisupa_informe_mensual",
+    "name": "JORGE FABIAN SUQUISUPA CALLE",
+    "verdict": "Concordante con el recorrido cargar datos o figuras y emitir un informe repetible. La adaptación exacta a su formato y a varios indicadores permanece pendiente de sus archivos reales.",
+    "requirements": [
+      {
+        "source_field": "proyectos",
+        "quote": "Automatizar informes mensuales los cuales contienen graficos y tablas pero estos graficos siempre son los mismos solo que actualizados con la información de cada mes",
+        "need": "Mantener gráficos, tablas y estructura estables al cambiar los datos del mes.",
+        "status": "parcial",
+        "evidence": [
+          "05_jorge_suquisupa_informe_mensual/assets/core.js: validateTemplate(), documentBody(), documentHTML()",
+          "05_jorge_suquisupa_informe_mensual/assets/workspace.js: template-form, period y notes-form",
+          "05_jorge_suquisupa_informe_mensual/NECESIDADES_Y_ALCANCE.md: Supuestos explícitos"
+        ],
+        "pending": "La plantilla local se conserva entre periodos. Para reproducir exactamente el informe de Jorge se requiere un informe aprobado, sus tablas de origen, indicadores/unidades y reglas de agregación. El formulario no contenía esos archivos.",
+        "coverage": "Conserva una plantilla editable mientras cambian los datos, notas y figuras del mes seleccionado. La estructura disponible puede reutilizarse, aunque todavía no reproduce un informe original que no se recibió."
+      },
+      {
+        "source_field": "objetivos",
+        "quote": "Cargar los graficos y tablas",
+        "need": "Incorporar tablas de origen al informe.",
+        "status": "local",
+        "evidence": [
+          "05_jorge_suquisupa_informe_mensual/herramientas.html: csv-file, mapeo de tres columnas y captura manual",
+          "05_jorge_suquisupa_informe_mensual/assets/core.js: parseCSV(), mapCSV(), mergeRows()"
+        ],
+        "pending": "La carga es CSV o captura manual, con un indicador y unidad por conjunto. Excel nativo debe exportarse a CSV; archivos y columnas reales permitirán confirmar el mapeo específico.",
+        "coverage": "Importa tablas CSV, permite elegir las columnas de fecha, categoría y valor, y muestra una revisión antes de incorporarlas. También permite añadir o corregir registros manualmente."
+      },
+      {
+        "source_field": "objetivos",
+        "quote": "Cargar los graficos y tablas",
+        "need": "Incorporar gráficos o tablas que ya estén preparados.",
+        "status": "local",
+        "evidence": [
+          "05_jorge_suquisupa_informe_mensual/herramientas.html: image-form, image-preview e image-apply",
+          "05_jorge_suquisupa_informe_mensual/assets/workspace.js: lectura, decodificación y confirmación PNG/JPEG",
+          "05_jorge_suquisupa_informe_mensual/assets/core.js: validateImage(), documentBody() anexos"
+        ],
+        "pending": "Los gráficos/tablas aportados se incorporan como PNG/JPEG con título, fuente y periodo, dentro de los límites de imagen documentados. No se extraen números de una imagen.",
+        "coverage": "Incorpora gráficos o tablas aportados como imágenes PNG o JPEG, con título, pie y mes. Las figuras quedan incluidas en el informe sin extraer ni interpretar automáticamente sus cifras."
+      },
+      {
+        "source_field": "automatizacion",
+        "quote": "que me de haciendo los graficos y tablas",
+        "need": "Generar gráficos y tablas a partir de los datos mensuales.",
+        "status": "local",
+        "evidence": [
+          "05_jorge_suquisupa_informe_mensual/assets/core.js: aggregate(), analyze(), chart(), documentBody()"
+        ],
+        "pending": "Cubre sumas por categoría, barras y hasta seis meses con registros para un indicador agregable. Tasas, ponderaciones o varias unidades exigen definir reglas reales; no se asume que todos los gráficos de su informe sean sumas.",
+        "coverage": "Calcula sumas por categoría y mes, y genera gráficos y tablas con esos resultados. Trabaja con un indicador y una unidad por conjunto, mostrando también hasta seis meses que tienen registros."
+      },
+      {
+        "source_field": "objetivos",
+        "quote": "que me emita el informe",
+        "need": "Obtener un documento completo para revisar y compartir.",
+        "status": "local",
+        "evidence": [
+          "05_jorge_suquisupa_informe_mensual/assets/core.js: documentHTML()",
+          "05_jorge_suquisupa_informe_mensual/assets/workspace.js: export-html y print-document",
+          "05_jorge_suquisupa_informe_mensual/LEEME.txt: pasos 8 a 10"
+        ],
+        "pending": "Se genera HTML autónomo e impresión desde el navegador. Notas y conclusiones son manuales. No se pidió expresamente un envío automático o ejecución programada, y no se cuentan como requisitos incumplidos.",
+        "coverage": "Genera un informe HTML autónomo con datos, gráficos, imágenes, notas y conclusiones registradas. Se puede descargar e imprimir desde el navegador."
+      },
+      {
+        "source_field": "estado_web",
+        "quote": "no_tengo",
+        "need": "Disponer de una herramienta web propia para crear el informe.",
+        "status": "local",
+        "evidence": [
+          "05_jorge_suquisupa_informe_mensual/index.html",
+          "05_jorge_suquisupa_informe_mensual/enfoque.html",
+          "05_jorge_suquisupa_informe_mensual/herramientas.html",
+          "05_jorge_suquisupa_informe_mensual/contacto.html",
+          "05_jorge_suquisupa_informe_mensual/404.html"
+        ],
+        "pending": "La carpeta estática está lista para apertura y despliegue; el formato real del informe aún necesita la muestra indicada.",
+        "coverage": "Incluye una web propia con presentación, método, editor, contacto y guía inicial. La carpeta puede abrirse como sitio estático y permite empezar a producir informes locales."
+      }
+    ],
+    "changes": [
+      {
+        "path": "05_jorge_suquisupa_informe_mensual/QA_RESULTADOS.md",
+        "summary": "Distinción explícita entre plantilla local repetible y réplica del informe no recibido; insumos requeridos y conteo vigente de pruebas."
+      },
+      {
+        "path": "05_jorge_suquisupa_informe_mensual/NECESIDADES_Y_ALCANCE.md",
+        "summary": "Distinción explícita entre plantilla local repetible y réplica del informe no recibido; insumos requeridos y conteo vigente de pruebas."
+      },
+      {
+        "path": "05_jorge_suquisupa_informe_mensual/LEEME.txt",
+        "summary": "Distinción explícita entre plantilla local repetible y réplica del informe no recibido; insumos requeridos y conteo vigente de pruebas."
+      }
+    ],
+    "tests": [
+      {
+        "executed": false,
+        "result": "Inspección del código y recorrido documental. Solo se modificó documentación; se conserva la evidencia funcional previa de 16/16 sin atribuir una nueva ejecución."
+      }
+    ]
+  }
+}
